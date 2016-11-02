@@ -1,3 +1,9 @@
+# This script demonstrates the use of tracemem to monitor object
+# duplication.
+#
+# Note that it doesn't seem to work as my comments say when using RStudio.
+# I'd like to find out when exactly this happens and why.
+
 x <- double(10)
 tracemem(x)
 .Internal(inspect(x))  # x has NAM(1)
