@@ -45,10 +45,13 @@ identical(a1, a4)
 
 # Run benchmarks
 library(microbenchmark)
-res <- microbenchmark(
-  bad=bad(n),
-  prealloc=prealloc(n),
-  lapplyrbind=lapplyrbind(n),
-  best=best(n)
-)
-print(res)
+
+for (n in c(200, 400, 600)) {
+  res <- microbenchmark(
+    bad=bad(n),
+    prealloc=prealloc(n),
+    lapplyrbind=lapplyrbind(n),
+    best=best(n)
+  )
+  print(res)
+}
